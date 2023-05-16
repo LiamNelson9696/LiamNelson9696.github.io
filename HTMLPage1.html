@@ -1,11 +1,101 @@
 ﻿<!DOCTYPE html>
+<html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+<style>
+.code {
+  background-color: cornsilk;
+  color: black;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+</style>
 </head>
+
 <body>
+
+<div class = "code">
+<h1>HTML + Javascript</h1>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+const intArr = [1, 2, 3];
+const doubleArr = [1.0, 2.0, 3.0];
+const stringArr = ["one", "two", "three"];
+
+let k = 0;
+let j = 0.0;
+let intSum = " ";
+let doubleSum = " ";
+let index = 0;
+
+for(let i = 0; i < intArr.length; i++)
+{
+  k += intArr[i];
+}
+
+for(let x in stringArr)
+{
+  if(x < stringArr.length-1){
+    intSum += stringArr[x] + " + ";
+  }
+  else 
+    intSum += stringArr[x] + " = ";
+}
+
+for(let x of doubleArr)
+{
+  j += doubleArr[1];
+}
+
+while(index < stringArr.length)
+{
+  if(index < stringArr.length-1){
+    doubleSum += stringArr[index] + " + ";
+  }
+  else
+    doubleSum += stringArr[index] + " = ";
+  index++;
+}
+
+document.getElementById("demo").innerHTML = intSum + k + "<br>";
+document.getElementById("demo2").innerHTML = doubleSum + parseFloat(j).toFixed(1) + "<br>";
+</div>
+</script>
+
+<div class = "samurai">
+<div>
+<p id="demo3"></p>
+<script>
+class Samurai {
+  counstructor(samuraiName) {
+    this.name = samuraiName;
+  }
+
+printSamurai() {
+   return "My name is " + this.name;
+  }
+}
+
+class Clan extends Samurai {
+  constructor(samuraiName, clan) {
+     super(samuraiName);
+     this.clan = clan;
+  }
+
+  printClan() {
+    return this.printSamurai() + " is from the " + this.clan + " clan";
+  }
+}
+
+const newSam = new Samurai("test");
+const mySamurai = new Clan("Yoshi Yasuhide", "Youda");
+document.getElementById("demo3").innerHTML = newSam.printSamurai();
+</script>
+</div>
 
 </body>
 </html>
